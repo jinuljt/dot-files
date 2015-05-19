@@ -1,0 +1,28 @@
+[user]
+	name =  Juntao Liu
+	email = jinuljt@gmail.com
+
+[alias]
+	ci = commit
+    pr = pull --rebase
+    br = branch
+	st = status
+    co = checkout
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+	lgp = log -p --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+
+
+[push]
+	config = default
+	default = tracking
+
+[core]
+	excludesfile = ~/.gitignore
+	editor = vim
+
+[color]
+   diff = auto
+   status = auto
+   branch = auto
+   interactive = auto
+   ui = true
