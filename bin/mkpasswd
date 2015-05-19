@@ -1,0 +1,45 @@
+#!/usr/bin/env python
+#-*- coding:utf-8 -*-
+# created:     Mon Sep 15 13:27:15 2014
+# filename:    mkpasswd.py
+# author:      juntao liu
+# email:       jinuljt@gmail.com
+# descritpion:
+
+import sys
+import random
+
+choice = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+choice_number = '0123456789'
+choice_upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+choice_lower = 'abcdefghijklmnopqrstuvwxyz'
+
+def contains(s, choice):
+    for ch in s:
+        if ch in choice:
+            return True
+    return False
+
+def mkpasswd(length, addition):
+    s = ''
+    c = choice + addition
+    for i in xrange(length):
+        s += random.choice(c)
+
+    if not (contains(s, choice_number) and contains(s, choice_upper) and
+            contains(s, choice_lower)):
+        return mkpasswd(length, addition)
+    return s
+
+if __name__ == "__main__":
+    length = 8
+    addition = ""
+    if len(sys.argv) >= 2:
+        arg = sys.argv[1]
+        try:
+            length = int(arg)
+        except:
+            length = 8
+    if len(sys.argv) >= 3:
+        addition = sys.argv[2]
+    print mkpasswd(length, addition)
