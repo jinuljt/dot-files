@@ -16,6 +16,9 @@
 	config = default
 	default = tracking
 
+[pull]
+   rebase = true
+
 [core]
 	excludesfile = ~/.gitignore
 	editor = vim
@@ -26,3 +29,6 @@
    branch = auto
    interactive = auto
    ui = true
+
+[branch]
+   autosetuprebase = always
