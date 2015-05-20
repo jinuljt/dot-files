@@ -2,10 +2,22 @@
 	path = .oh-my-zsh
 	url = https://github.com/chrishunt/oh-my-zsh
 
-    
 [submodule ".emacs.d/plugins/yasnippet"]
-	path = plugins/yasnippet
+	path = .emacs.d/plugins/yasnippet
 	url = https://github.com/capitaomorte/yasnippet
+
 [submodule ".emacs.d/plugins/org-mode"]
 	path = .emacs.d/plugins/org-mode
 	url = git://orgmode.org/org-mode.git
+
+[submodule ".emacs.d/plugins/emacs-flymake"]
+	path = .emacs.d/plugins/emacs-flymake
+	url = https://github.com/illusori/emacs-flymake
+
+[submodule ".emacs.d/plugins/gocode"]
+	path = .emacs.d/plugins/gocode
+	url = https://github.com/nsf/gocode
+
+[submodule ".emacs.d/plugins/goflymake"]
+	path = .emacs.d/plugins/goflymake
+	url = https://github.com/dougm/goflymake
