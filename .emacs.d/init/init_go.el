@@ -1,0 +1,17 @@
+;;;;go-lang start
+(setenv "GOPATH" "~/workspace/go")
+(setenv "PATH" (concat (getenv "PATH") ":" "/usr/local/go/bin"))
+(setq exec-path (append exec-path '("/usr/local/go/bin")))
+(setenv "PATH" (concat (getenv "PATH") ":" "~/workspace/go/bin"))
+(setq exec-path (append exec-path '("~/workspace/go/bin")))
+
+(require 'go-mode-load)
+(add-hook 'before-save-hook 'gofmt-before-save)
+;(add-hook 'go-mode-hook (lambda ()
+;                          (local-set-key (kbd \"M-.\") 'godef-jump)))
+(add-to-list 'load-path "~/.emacs.d/plugins/goflymake")
+(require 'go-flymake)
+
+(add-to-list 'load-path "~/.emacs.d/plugins/gocode/emacs")
+(require 'go-autocomplete)
+;;;;go-lang end
