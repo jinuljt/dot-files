@@ -9,10 +9,11 @@
 import sys
 import random
 
-choice = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+choice = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%;:,.'
 choice_number = '0123456789'
 choice_upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 choice_lower = 'abcdefghijklmnopqrstuvwxyz'
+choice_special= '!@#$%;:,.'
 
 def contains(s, choice):
     for ch in s:
@@ -27,7 +28,7 @@ def mkpasswd(length, addition):
         s += random.choice(c)
 
     if not (contains(s, choice_number) and contains(s, choice_upper) and
-            contains(s, choice_lower)):
+            contains(s, choice_lower) and contains(s, choice_special)):
         return mkpasswd(length, addition)
     return s
 

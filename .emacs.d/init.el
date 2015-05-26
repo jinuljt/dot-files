@@ -61,13 +61,13 @@
 (load-library "session")
 
 ;;;read init_python.el
-(load-library "init_python")
+(load-library "python")
 
 ;;;;read init_go.el
-(load-library "init_go")
+(load-library "go")
 
 ;;;read init_web.el
-(load-library "init_web")
+(load-library "web")
 
 ;显示列号
 (setq column-number-mode t)
@@ -96,7 +96,7 @@
 ;(load-file "~/.emacs.d/cedet-1.0pre6/common/cedet.el")
 
 ;org mode
-(load "init_org.el")
+(load "org.el")
 
 
 
