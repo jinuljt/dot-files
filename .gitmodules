@@ -21,3 +21,6 @@
 [submodule ".emacs.d/plugins/goflymake"]
 	path = .emacs.d/plugins/goflymake
 	url = https://github.com/dougm/goflymake
+[submodule ".emacs.d/plugins/emacs-go-eldoc"]
+	path = .emacs.d/plugins/emacs-go-eldoc
+	url = http://github.com/syohex/emacs-go-eldoc
