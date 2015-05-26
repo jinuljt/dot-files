@@ -45,7 +45,7 @@ ZSH_THEME="robbyrussell"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew pip virtualenv svn vagrant git-flow history-substring-search docker tmux golang go)
+plugins=(git brew pip virtualenv svn vagrant git-flow history-substring-search docker tmux go golang)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -69,5 +69,5 @@ export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin:~/bin"
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
 # go lang
-export PATH=$PATH:"/usr/local/go/bin"
 export GOPATH=$HOME/workspace/go
+export PATH=$PATH:"/usr/local/go/bin:$GOPATH/bin"
