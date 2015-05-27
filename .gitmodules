@@ -24,3 +24,6 @@
 [submodule ".emacs.d/plugins/emacs-go-eldoc"]
 	path = .emacs.d/plugins/emacs-go-eldoc
 	url = http://github.com/syohex/emacs-go-eldoc
+[submodule ".emacs.d/plugins/go-mode"]
+	path = .emacs.d/plugins/go-mode
+	url = https://github.com/dominikh/go-mode.el

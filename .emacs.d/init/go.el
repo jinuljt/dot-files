@@ -5,7 +5,9 @@
 (setenv "PATH" (concat (getenv "PATH") ":" "~/workspace/go/bin"))
 (setq exec-path (append exec-path '("~/workspace/go/bin")))
 
-(require 'go-mode-load)
+(add-to-list 'load-path "~/.emacs.d/plugins/go-mode")
+(require 'go-mode-autoloads)
+
 (add-hook 'before-save-hook 'gofmt-before-save)
 (add-hook 'go-mode-hook (lambda ()
                           (local-set-key (kbd "M-.") 'godef-jump)))
