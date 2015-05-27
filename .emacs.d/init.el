@@ -90,8 +90,9 @@
 ;标题栏显示buffer名
 ;(setq frame-title-format "emacs@%b")
 
-
-(setq tab-width 4 indent-tabs-mode nil)
+(setq indent-tabs-mode nil)
+(setq tab-width 4)
+(setq-default tab-width 4)
 
 ;(load-file "~/.emacs.d/cedet-1.0pre6/common/cedet.el")
 
