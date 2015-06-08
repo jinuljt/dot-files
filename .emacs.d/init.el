@@ -69,6 +69,9 @@
 ;;;read init_web.el
 (load-library "web")
 
+;;;read lua init
+(load-library "lua")
+
 ;显示列号
 (setq column-number-mode t)
 (setq kill-ring-max 200)
