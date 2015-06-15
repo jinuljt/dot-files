@@ -45,7 +45,7 @@ ZSH_THEME="robbyrussell"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew pip svn vagrant git-flow history-substring-search docker tmux go golang scd)
+plugins=(git brew pip virtualenvwrapper svn vagrant git-flow history-substring-search docker tmux go golang scd)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -71,3 +71,14 @@ export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin:$HOME/
 # go lang
 export GOPATH=$HOME/workspace/go
 export PATH=$PATH:"/usr/local/go/bin:$GOPATH/bin"
+export WORKON_HOME=~/workspace/Envs
+
+# boot2docker
+if which boot2docker >/dev/null; then
+    DOCKER_STATUS=`boot2docker status`
+    if [ "${DOCKER_STATUS}" = "running" ]; then
+        export DOCKER_HOST=tcp://`boot2docker ip`:2376
+        export DOCKER_CERT_PATH=/Users/liujuntao/.boot2docker/certs/boot2docker-vm
+        export DOCKER_TLS_VERIFY=1
+    fi
+fi

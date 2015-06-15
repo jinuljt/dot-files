@@ -8,6 +8,7 @@
 (add-to-list 'load-path "~/.emacs.d/plugins/go-mode")
 (require 'go-mode-autoloads)
 
+(setq gofmt-command "goimports")
 (add-hook 'before-save-hook 'gofmt-before-save)
 (add-hook 'go-mode-hook (lambda ()
                           (local-set-key (kbd "M-.") 'godef-jump)))
