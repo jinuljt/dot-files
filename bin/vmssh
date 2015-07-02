@@ -1,0 +1,5 @@
+#!/bin/bash
+VM_USER=$(echo "${1}"| awk -F "@" '{print $1}')
+VM_NAME=$(echo "${1}"| awk -F "@" '{print $2}')
+VM_IP=$(VBoxManage guestproperty get "${VM_NAME}" "/VirtualBox/GuestInfo/Net/1/V4/IP" | awk '{print $2}')
+ssh ${VM_USER}@${VM_IP}
