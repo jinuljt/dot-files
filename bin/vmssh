@@ -1,5 +1,24 @@
 #!/bin/bash
 VM_USER=$(echo "${1}"| awk -F "@" '{print $1}')
 VM_NAME=$(echo "${1}"| awk -F "@" '{print $2}')
-VM_IP=$(VBoxManage guestproperty get "${VM_NAME}" "/VirtualBox/GuestInfo/Net/1/V4/IP" | awk '{print $2}')
+
+
+VM_STATUS=$(vboxmanage showvminfo ${VM_NAME} 2>/dev/null|grep "State:"|awk -F " " '{print $2;}')
+
+case ${VM_STATUS} in
+   running)
+      #vm already runing
+      ;;
+   saved | powered)
+      echo "start vm, wait 10 seconds to connect"
+      vboxmanage startvm ${VM_NAME} --type headless
+      sleep 10
+      ;;
+   paused)
+      echo "resume vm"
+      vboxmanage controlvm ${VM_NAME} resume
+      ;;
+esac
+
+VM_IP=$(vboxmanage guestproperty get "${VM_NAME}" "/VirtualBox/GuestInfo/Net/1/V4/IP" | awk '{print $2}')
 ssh ${VM_USER}@${VM_IP}

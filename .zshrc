@@ -71,7 +71,6 @@ export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin:$HOME/
 # go lang
 export GOPATH=$HOME/workspace/go
 export PATH=$PATH:"/usr/local/go/bin:$GOPATH/bin"
-export WORKON_HOME=~/workspace/Envs
 
 # boot2docker
 if which boot2docker >/dev/null; then
