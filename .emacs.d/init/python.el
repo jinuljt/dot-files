@@ -10,7 +10,6 @@
 (setq ropemacs-enable-autoimport t)
 
 
-
 (setq auto-mode-alist (cons '("\\.py$" . python-mode) auto-mode-alist))
 (setq interpreter-mode-alist(cons '("python" . python-mode) 
                                   interpreter-mode-alist))
@@ -36,10 +35,18 @@
            (local-file (file-relative-name
                          temp-file
                          (file-name-directory buffer-file-name))))
-      (list "pyflakes" (list local-file))))
+      (list "epylint" (list local-file))))
   (add-to-list 'flymake-allowed-file-name-masks
                '("\\.py\\'" flymake-pylint-init)))
 (add-hook 'python-mode-hook 'flymake-mode)
+
+; auto remove tailing whitespace when file is saved
+(add-hook 'python-mode-hook
+		  (lambda()
+			(add-hook 'local-write-file-hooks
+					  '(lambda()
+						 (save-excursion
+						   (delete-trailing-whitespace))))))
 
 
 (define-key global-map "\C-cn" 'flymake-goto-next-error)

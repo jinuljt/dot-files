@@ -6,3 +6,8 @@
 .DS_Store
 *.swp
 *.elc
+.emacs.d/.org-id-locations
+.emacs.d/ac*
+.emacs.d/desktop-sessions
+.emacs.d/ido.last
+.emacs.d/tmp
